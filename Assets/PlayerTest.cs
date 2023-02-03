@@ -14,6 +14,6 @@ public class PlayerTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position -= new Vector3(0,0,0.05f);
+        //this.transform.position -= new Vector3(0,0,0.05f);
     }
 }

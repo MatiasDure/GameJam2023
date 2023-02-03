@@ -26,8 +26,6 @@ public class SpawnSprout : MonoBehaviour
         {
             var sprout = SproutPool.Instance.GetPooledRoot();
             sprout.gameObject.SetActive(true);
-            sprout.transform.position = new Vector3(0, 0, 0);
-
             yield return new WaitForSeconds(spawnDelay);
         }
     }

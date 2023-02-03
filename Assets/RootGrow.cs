@@ -20,7 +20,14 @@ public class RootGrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        listener.OnChildTriggered += GrowRoot;
+        listener.OnChildTriggerEnter += GrowRoot;
+        listener.OnChildTriggerExit += Deactivate;
+    }
+
+    private void Deactivate()
+    {
+        ResetRoot();
+        this.gameObject.SetActive(false);
     }
 
     private void GrowRoot()
@@ -29,18 +36,21 @@ public class RootGrow : MonoBehaviour
         UpdateCenter(rootGrowth);
     }
 
+    private void ResetRoot()
+    {
+        colliderBox.size = Vector3.one;
+        colliderBox.center = Vector3.zero;
+    }
+
     private void UpdateCenter(Vector3 newSize) => colliderBox.center = new Vector3(FormulaForCenter(newSize.x), FormulaForCenter(newSize.y), FormulaForCenter(newSize.z));
 
     private float FormulaForCenter(float newSize) => (newSize - 1) / 2; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SetRootGrowth(Vector3 growth) => rootGrowth = growth;
 
     private void OnDestroy()
     {
-        listener.OnChildTriggered -= GrowRoot;
+        listener.OnChildTriggerEnter -= GrowRoot;
+        listener.OnChildTriggerExit -= Deactivate;
     }
 }

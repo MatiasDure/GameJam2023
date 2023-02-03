@@ -7,6 +7,8 @@ public class SproutPool : MonoBehaviour
 {
     [SerializeField] RootGrow rootPrefab;
     [SerializeField] uint amountToSpawn;
+    [SerializeField] Vector3[] growthRoots;
+    [SerializeField] uint lanesUsed;
 
     private List<RootGrow> pooledRoots;
 
@@ -27,7 +29,7 @@ public class SproutPool : MonoBehaviour
         {
             RootGrow temp = Instantiate(rootPrefab);
             pooledRoots.Add(temp);
-            temp.gameObject.SetActive(false);    
+            temp.gameObject.SetActive(false);
         }
     }
 
@@ -35,7 +37,15 @@ public class SproutPool : MonoBehaviour
     {
         foreach(var root in pooledRoots)
         {
-            if (!root.gameObject.activeInHierarchy) return root;
+            if (!root.gameObject.activeInHierarchy)
+            {
+                root.SetRootGrowth(AssignRandomGrowth());
+                var bla = AssignRandomPosition();
+                Debug.Log("random pos assigned: " + bla);
+                root.transform.position = bla;
+                Debug.Log("x value: "+ root.transform.position.x);
+                return root;
+            }
         }
         return InstantiateNewRoot();
     }
@@ -44,7 +54,14 @@ public class SproutPool : MonoBehaviour
     {
         RootGrow temp = Instantiate(rootPrefab);
         temp.gameObject.SetActive(false);
+        temp.SetRootGrowth(AssignRandomGrowth());
+        temp.transform.position = AssignRandomPosition();
         pooledRoots.Add(temp);
         return temp;
     }
+
+    private Vector3 AssignRandomPosition() => new(Mathf.Round(Random.Range(-lanesUsed, lanesUsed+1)), 0,0);
+
+    private Vector3 AssignRandomGrowth() => growthRoots[Random.Range(0, growthRoots.Length)];
+
 }

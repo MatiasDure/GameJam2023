@@ -6,7 +6,8 @@ using UnityEngine;
 public class TriggerInformParent : MonoBehaviour
 {
 
-    public event Action OnTriggered;
+    public event Action OnObjectEnter;
+    public event Action OnObjectExit;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +22,19 @@ public class TriggerInformParent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerTest playerMovement;
-        other.gameObject.TryGetComponent<PlayerTest>(out playerMovement);
-        if(playerMovement != null)
+        if (other.gameObject.CompareTag("Player"))
         {
-            OnTriggered?.Invoke();
+            OnObjectEnter?.Invoke();
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            OnObjectExit?.Invoke();
+        }
+    }
+
+
 }
