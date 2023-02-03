@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 7181883005369525712}
   - component: {fileID: 7181883005369525724}
   - component: {fileID: 7181883005369525725}
+  - component: {fileID: 1490813411}
   m_Layer: 0
   m_Name: sprout
   m_TagString: Untagged
@@ -186,3 +187,16 @@ MonoBehaviour:
   colliderBox: {fileID: 7181883005369525712}
   listener: {fileID: 7181883005369525724}
   rootGrowth: {x: 3, y: 1, z: 1}
+--- !u!114 &1490813411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181883005369525715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b981c822a2232fe4e9f41e3100ebac4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0.1}
