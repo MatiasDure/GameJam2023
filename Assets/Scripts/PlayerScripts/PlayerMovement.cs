@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    [SerializeField]
+    Animator animator; 
+
     [SerializeField]
     BoxCollider boxCollider; 
 
@@ -74,6 +78,12 @@ public class PlayerMovement : MonoBehaviour
         if (desLane < -extraLanes) desLane = -extraLanes;
 
         Crouching();
+
+        animator.SetBool("Running", true);
+        animator.SetBool("Jumping", (jumping|| falling));
+        animator.SetBool("Crouching", crouching);
+
+
 
     }
 
