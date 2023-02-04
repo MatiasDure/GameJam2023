@@ -60,9 +60,15 @@
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />
     <Compile Include="Assets\RootGrow.cs" />
     <Compile Include="Assets\SproutPool.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\SpawnSprout.cs" />
     <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\PlayerCollision.cs" />
+=======
+    <Compile Include="Assets\PlayerTest.cs" />
+    <Compile Include="Assets\TriggerListener.cs" />
+    <Compile Include="Assets\TriggerInformParent.cs" />
+>>>>>>> Assests
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
