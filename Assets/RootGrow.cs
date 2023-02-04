@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(TriggerListener), typeof(BoxCollider))]
 public class RootGrow : MonoBehaviour
@@ -17,8 +18,6 @@ public class RootGrow : MonoBehaviour
     [SerializeField] GameObject mesh;
 
     Vector3 startScale;
-
-    
 
     private void Awake()
     {
@@ -59,7 +58,7 @@ public class RootGrow : MonoBehaviour
     private void GrowRoot()
     {
         StartCoroutine(CameraShake.Instance.Shake(.05f,.06f,.04f));
-       growing = true; 
+        growing = true; 
         colliderBox.size = rootGrowth;
         UpdateCenter(rootGrowth);
     }
