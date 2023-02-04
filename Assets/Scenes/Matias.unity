@@ -2990,41 +2990,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 543450652616822698, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883004560194339, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883004560194339, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883004560194339, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883004560194339, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7181883005369525715, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
       propertyPath: m_Name
       value: sprout
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883005369525715, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883005369525725, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: rootGrowth.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7181883005369525725, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
-      propertyPath: rootGrowth.y
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7181883005369525727, guid: 936fe306b9074344695a5cebbe8b7dca, type: 3}
       propertyPath: m_RootOrder
