@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7181883004560194338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.19}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_LocalScale: {x: 19.904, y: 19.904, z: 19.904}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7181883005369525727}
@@ -158,7 +158,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7181883005369525724
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderBox: {fileID: 7181883005369525712}
   listener: {fileID: 7181883005369525724}
-  rootGrowth: {x: 1, y: 3, z: 1}
+  rootGrowth: {x: 0.5, y: 6, z: 0.5}
   growSpeed: 0.3
   growthAmount: 300
   mesh: {fileID: 919132148091213072}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b981c822a2232fe4e9f41e3100ebac4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: -0.1}
+  velocity: {x: 0, y: 0, z: -0.4}
 --- !u!1001 &1982081799343316559
 PrefabInstance:
   m_ObjectHideFlags: 0

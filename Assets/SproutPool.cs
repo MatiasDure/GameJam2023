@@ -46,7 +46,7 @@ public class SproutPool : MonoBehaviour
                 //assigning position based on rotation
                 Vector3Int ranPos;
                 if (ranRotation == 0) ranPos = AssignRandomPosition();
-                else ranPos = ranRotation > 0 ? new(lanesUsed, 0, 0) : new(-lanesUsed, 0, 0);
+                else ranPos = ranRotation > 0 ? new(lanesUsed, 0, 16) : new(-lanesUsed, 0, 16);
 
                 root.transform.position = ranPos;
                 root.transform.rotation = Quaternion.Euler(0, root.transform.rotation.y, ranRotation);
@@ -68,7 +68,7 @@ public class SproutPool : MonoBehaviour
 
     private float AssignRandomRotation() => rotations[Random.Range(0, rotations.Length)];
 
-    private Vector3Int AssignRandomPosition() => new(Random.Range(-lanesUsed, lanesUsed+1), 0,0);
+    private Vector3Int AssignRandomPosition() => new(Random.Range(-lanesUsed, lanesUsed+1), 0,16);
 
     private Vector3 AssignRandomGrowth() => growthRoots[Random.Range(0, growthRoots.Length)];
 

@@ -57,10 +57,11 @@ public class RootGrow : MonoBehaviour
 
     private void GrowRoot()
     {
+        AudioManage.Instance.Play(AudioManage.sound.sprouts);
         StartCoroutine(CameraShake.Instance.Shake(.05f,.06f,.04f));
         growing = true; 
-        colliderBox.size = rootGrowth;
-        UpdateCenter(rootGrowth);
+        colliderBox.size = new Vector3(rootGrowth.x, rootGrowth.y *2.5f, rootGrowth.z);
+        UpdateCenter(new Vector3(rootGrowth.x, rootGrowth.y * 2.5f, rootGrowth.z));
     }
 
     private void ResetRoot()

@@ -46,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
     bool grounded;
     bool jumping;
 
+    bool playJumping;
+
     [SerializeField]
     float crouchAmount; 
     bool crouching; 
@@ -82,6 +84,13 @@ public class PlayerMovement : MonoBehaviour
         //nimator.SetBool("Running", true);
         animator.SetBool("Jumping", (jumping|| falling));
         animator.SetBool("Crouching", crouching);
+
+        if(jumping && !playJumping)
+        {
+            playJumping = true;
+
+            AudioManage.Instance.Play(AudioManage.sound.jumps);
+        }
 
 
 
@@ -127,14 +136,23 @@ public class PlayerMovement : MonoBehaviour
             height = 0;
             heightAcc = 0;
             heightVel = 0;
+
+            playJumping = false;
         }
 
     }
 
     void KeyControlls()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) desLane--;
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) desLane++;
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            desLane--;
+            AudioManage.Instance.Play(AudioManage.sound.strafe);
+        }
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) { 
+            desLane++;
+            AudioManage.Instance.Play(AudioManage.sound.strafe);
+        }
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space) && !jumping) jumping = true;
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftControl)) crouching = true;
         else crouching = false;
