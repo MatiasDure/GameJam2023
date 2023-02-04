@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         Crouching();
 
-        animator.SetBool("Running", true);
+        //nimator.SetBool("Running", true);
         animator.SetBool("Jumping", (jumping|| falling));
         animator.SetBool("Crouching", crouching);
 
