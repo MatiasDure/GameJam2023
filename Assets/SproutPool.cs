@@ -41,9 +41,7 @@ public class SproutPool : MonoBehaviour
             {
                 root.SetRootGrowth(AssignRandomGrowth());
                 var bla = AssignRandomPosition();
-                Debug.Log("random pos assigned: " + bla);
                 root.transform.position = bla;
-                Debug.Log("x value: "+ root.transform.position.x);
                 return root;
             }
         }

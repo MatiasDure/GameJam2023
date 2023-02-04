@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 238228881832982213}
   - component: {fileID: 238228881832982212}
   - component: {fileID: 1325965249}
+  - component: {fileID: 1325965250}
+  - component: {fileID: 529484566732804134}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Player
@@ -111,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c9d0d5e56151442a6b408766f50c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 529484566732804134}
   boxCollider: {fileID: 238228881832982213}
   speed: 0
   extraLanes: 1
@@ -136,3 +139,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1325965250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238228881832982215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322ad0e9acf7ee54483282053bf255fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &529484566732804134
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238228881832982215}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cb172de9fea83e41a88fc2b93277205, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

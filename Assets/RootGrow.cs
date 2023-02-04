@@ -32,6 +32,7 @@ public class RootGrow : MonoBehaviour
 
     private void GrowRoot()
     {
+        StartCoroutine(CameraShake.Instance.Shake(.05f,.06f,.04f));
         colliderBox.size = rootGrowth;
         UpdateCenter(rootGrowth);
     }
@@ -42,9 +43,14 @@ public class RootGrow : MonoBehaviour
         colliderBox.center = Vector3.zero;
     }
 
-    private void UpdateCenter(Vector3 newSize) => colliderBox.center = new Vector3(FormulaForCenter(newSize.x), FormulaForCenter(newSize.y), FormulaForCenter(newSize.z));
+    private void UpdateCenter(Vector3 newSize) => colliderBox.center = new Vector3(FormulaForCenter(newSize.x, true), FormulaForCenter(newSize.y), FormulaForCenter(newSize.z));
 
-    private float FormulaForCenter(float newSize) => (newSize - 1) / 2; 
+    private float FormulaForCenter(float newSize, bool canNegate = false)
+    {
+        float result = (newSize - 1) / 2;
+        if(canNegate) return this.transform.position.x > 0 ? result : -result;
+        return result;
+    }
 
     public void SetRootGrowth(Vector3 growth) => rootGrowth = growth;
 
