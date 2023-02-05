@@ -10,6 +10,7 @@ public class RootGrow : MonoBehaviour
     [SerializeField] BoxCollider colliderBox;
     [SerializeField] TriggerListener listener;
     [SerializeField] Vector3 rootGrowth;
+    [SerializeField] ParticleSystem dirtParticle;
 
     public bool growing = false;
 
@@ -95,6 +96,7 @@ public class RootGrow : MonoBehaviour
     private void GrowRoot()
     {
         AudioManage.Instance.Play(AudioManage.sound.sprouts);
+        if(dirtParticle != null ) dirtParticle.Play();
         StartCoroutine(CameraShake.Instance.Shake(.05f,.06f,.04f));
         growing = true; 
         colliderBox.size = new Vector3(rootGrowth.x, rootGrowth.y *2.5f, rootGrowth.z);
