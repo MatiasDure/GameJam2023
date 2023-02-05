@@ -6,19 +6,12 @@ public class SpawnSprout : MonoBehaviour
 {
 
     [SerializeField] Vector2 spawnDelay;
+    [SerializeField] float amountToDecreaseDelayBy;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Spawn());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DistanceTracker.OnMarkPassed += DecreaseDelayRange;
     }
 
     IEnumerator Spawn()
@@ -30,5 +23,15 @@ public class SpawnSprout : MonoBehaviour
             sprout.gameObject.SetActive(true);
             yield return new WaitForSeconds(timeToWait);
         }
+    }
+
+    private void DecreaseDelayRange()
+    {
+        spawnDelay.y -= amountToDecreaseDelayBy;
+    }
+
+    private void OnDestroy()
+    {
+        DistanceTracker.OnMarkPassed -= DecreaseDelayRange;
     }
 }

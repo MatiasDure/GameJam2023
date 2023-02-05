@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{389DE1AB-9360-07FC-BC0F-3F122F812BDE}</ProjectGuid>
+    <ProjectGuid>{35223D1A-0ABA-3E00-D682-2F913F0EB5DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,29 +53,26 @@
     <UnityVersion>2021.3.14f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\RootGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />
-    <Compile Include="Assets\RootGrow.cs" />
-    <Compile Include="Assets\DistanceTracker.cs" />
-    <Compile Include="Assets\FinishMenu.cs" />
-    <Compile Include="Assets\SproutPool.cs" />
-    <Compile Include="Assets\PlayerCollision.cs" />
-    <Compile Include="Assets\PauseSystem.cs" />
-    <Compile Include="Assets\PlayerTest.cs" />
-    <Compile Include="Assets\AudioManage.cs" />
-    <Compile Include="Assets\Scripts\ObjectPooler.cs" />
-    <Compile Include="Assets\DuplicateGround.cs" />
+    <Compile Include="Assets\Scripts\RootScript\RootGrow.cs" />
+    <Compile Include="Assets\Scripts\Game\DistanceTracker.cs" />
+    <Compile Include="Assets\Scripts\Ui\FinishMenu.cs" />
+    <Compile Include="Assets\Scripts\RootScript\SproutPool.cs" />
+    <Compile Include="Assets\Scripts\PlayerScripts\PlayerCollision.cs" />
+    <Compile Include="Assets\Scripts\Game\PauseSystem.cs" />
+    <Compile Include="Assets\Scripts\Game\AudioManage.cs" />
+    <Compile Include="Assets\Scripts\Ground\DuplicateGround.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Movement.cs" />
-    <Compile Include="Assets\CameraShake.cs" />
-    <Compile Include="Assets\SpawnSprout.cs" />
-    <Compile Include="Assets\TriggerInformParent.cs" />
-    <Compile Include="Assets\PauseMenu.cs" />
-    <Compile Include="Assets\SceneManage.cs" />
-    <Compile Include="Assets\TriggerListener.cs" />
+    <Compile Include="Assets\Scripts\Generic\Movement.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
+    <Compile Include="Assets\Scripts\RootScript\SpawnSprout.cs" />
+    <Compile Include="Assets\Scripts\Generic\TriggerInformParent.cs" />
+    <Compile Include="Assets\Scripts\Ui\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Game\SceneManage.cs" />
+    <Compile Include="Assets\Scripts\Generic\TriggerListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -370,6 +367,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>

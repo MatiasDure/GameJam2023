@@ -13,7 +13,6 @@ public class TriggerListener : MonoBehaviour
     private void Awake()
     {
         if(!trigger) trigger = GetComponentInChildren<TriggerInformParent>();
-        Debug.Log(trigger);
     }
     // Start is called before the first frame update
     void Start()
