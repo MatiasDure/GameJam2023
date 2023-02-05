@@ -125,7 +125,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5f3e94f7efef60545b5dd4c2ec6cf3cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -219,6 +219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7181883005369525727}
     m_Modifications:
+    - target: {fileID: 882794881872947850, guid: 12e4aeef5bf64ab459359383fc72eaca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5f3e94f7efef60545b5dd4c2ec6cf3cd, type: 2}
     - target: {fileID: 1675529503339596639, guid: 12e4aeef5bf64ab459359383fc72eaca, type: 3}
       propertyPath: m_Name
       value: Root

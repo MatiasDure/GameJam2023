@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Omair_Scene.unity
+    guid: 3009cd25d3474434f8c86e3ba27d331e
+  - enabled: 0
+    path: Assets/Scenes/Omair_Main.unity
+    guid: 92f51fa5683bd8f43af0142e4b2dba5b
+  - enabled: 0
+    path: Assets/Scenes/Matias.unity
+    guid: b7b195e567a3754409382f5913abe1aa
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: cabeec7af5995c7458ab278fe4c10da2
+  - enabled: 0
+    path: Assets/Scenes/Main.unity
+    guid: 3345868ead58e4f46bd5d25f0c9cae3f
   m_configObjects: {}

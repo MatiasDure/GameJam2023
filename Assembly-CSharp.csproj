@@ -76,6 +76,7 @@
     <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\SceneManage.cs" />
     <Compile Include="Assets\TriggerListener.cs" />
+    <Compile Include="Assets\Credits.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
