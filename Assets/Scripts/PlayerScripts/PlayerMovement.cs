@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         lane = Mathf.Lerp(lane, desLane, switchingSpeed);
         gameObject.transform.position = new  Vector3((lane * spaceBetween), height, transform.position.z);
 
+        Crouching();
         if (jumping) Jumping(jumpHeight);
 
     }
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
         if (desLane > extraLanes) desLane = extraLanes;
         if (desLane < -extraLanes) desLane = -extraLanes;
 
-        Crouching();
+
 
         //nimator.SetBool("Running", true);
         animator.SetBool("Jumping", (jumping|| falling));
@@ -102,12 +103,12 @@ public class PlayerMovement : MonoBehaviour
         if (crouching)
         {
             boxCollider.size = new Vector3(boxCollider.size.x, crouchAmount, boxCollider.size.z);
-            boxCollider.center = new Vector3(0, (crouchAmount - 1) / 2, 0);
+            boxCollider.center = new Vector3(0, (crouchAmount - 1) / 2, 0.2f);
         }
         else
         {
-            boxCollider.size = new Vector3(boxCollider.size.x, 1, boxCollider.size.z);
-            boxCollider.center = new Vector3(0, 0, 0);
+            boxCollider.size = new Vector3(boxCollider.size.x, 1.6f, boxCollider.size.z);
+            boxCollider.center = new Vector3(0, 0.4f, 0.2f);
         }
 
 
@@ -138,6 +139,17 @@ public class PlayerMovement : MonoBehaviour
             heightVel = 0;
 
             playJumping = false;
+        }
+
+    
+            //boxCollider.size = new Vector3(boxCollider.size.x, crouchAmount, boxCollider.size.z);
+            boxCollider.center = new Vector3(0, 0.7f, 0.2f);
+        Debug.Log(boxCollider.center);
+        
+        if(!jumping)
+        {
+            boxCollider.size = new Vector3(boxCollider.size.x, 1.6f, boxCollider.size.z);
+            boxCollider.center = new Vector3(0, 0.4f, 0.2f);
         }
 
     }

@@ -36,7 +36,7 @@ public class DistanceTracker : MonoBehaviour
         //use this to ignore pause
         GameFinished = true;
         finalTime = timer.ToString("0.00");
-        //OnFinish?.Invoke(finalTime);
+        OnFinish?.Invoke(finalTime);
     }
 
     private void OnDestroy()

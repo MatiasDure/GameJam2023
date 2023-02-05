@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7181883004560194338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.19}
-  m_LocalScale: {x: 19.904, y: 19.904, z: 19.904}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7181883005369525727}
@@ -79,7 +79,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7181883005369525727
 Transform:
   m_ObjectHideFlags: 0
@@ -188,9 +188,17 @@ MonoBehaviour:
   colliderBox: {fileID: 7181883005369525712}
   listener: {fileID: 7181883005369525724}
   rootGrowth: {x: 0.5, y: 6, z: 0.5}
+  growing: 0
   growSpeed: 0.3
   growthAmount: 300
   mesh: {fileID: 919132148091213072}
+  self: {fileID: 7181883005369525725}
+  isTwoStep: 1
+  newBranchHeights:
+  - 1.5
+  - 2.5
+  - 0.5
+  movementScript: {fileID: 1490813411}
 --- !u!114 &1490813411
 MonoBehaviour:
   m_ObjectHideFlags: 0
