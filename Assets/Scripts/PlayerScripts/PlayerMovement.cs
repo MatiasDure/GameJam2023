@@ -141,10 +141,7 @@ public class PlayerMovement : MonoBehaviour
             playJumping = false;
         }
 
-    
-            //boxCollider.size = new Vector3(boxCollider.size.x, crouchAmount, boxCollider.size.z);
             boxCollider.center = new Vector3(0, 0.7f, 0.2f);
-        Debug.Log(boxCollider.center);
         
         if(!jumping)
         {

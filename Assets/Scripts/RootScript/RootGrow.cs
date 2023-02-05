@@ -18,7 +18,6 @@ public class RootGrow : MonoBehaviour
     [SerializeField] GameObject mesh;
 
     [SerializeField] RootGrow self;
-    RootGrow childBranch; 
 
     public bool isTwoStep;
     bool secondGrown;
@@ -33,9 +32,6 @@ public class RootGrow : MonoBehaviour
     {
         if(!listener) listener = GetComponent<TriggerListener>();
         if(!colliderBox) colliderBox = GetComponent<BoxCollider>();
-        Debug.Log(listener);
-        Debug.Log(colliderBox);
-
     }
     // Start is called before the first frame update
     void Start()
@@ -48,10 +44,7 @@ public class RootGrow : MonoBehaviour
     private void FixedUpdate()
     {
         if (growing) Grow();
-
         if(isTwoStep) twoStep();
-
-
     }
 
     void twoStep()
@@ -71,26 +64,18 @@ public class RootGrow : MonoBehaviour
                 if(p.x > 0) zRot = 90;
                 if (p.x < 0) zRot = -90;
                 if (p.x == 0) return;
-                Debug.Log("Posiiton : :: " + p);
             }
 
             var newBranch = SproutPool.Instance.GetPooledRoot();
             newBranch.isTwoStep = false;
-            //sprout.gameObject.SetActive(true);
-
-            //newBranch = Instantiate(self, transform.position + transform.up * 3, Quaternion.Euler(r.x, r.y, zRot));
-            //newBranch.transform.parent = this.transform;
-            //newBranch.DeactivateMovement();
 
             int index = UnityEngine.Random.Range(0, newBranchHeights.Length);
-            Debug.Log("dashuygfvgsydugf INDEXXX ::: " + index);
             float num = newBranchHeights[index]; 
 
             newBranch.gameObject.SetActive(true);
             newBranch.transform.position = transform.position + transform.up * num;
             newBranch.transform.rotation = Quaternion.Euler(0, 0, zRot);
             newBranch.isTwoStep = false;
-            //childBranch = newBranch; 
             secondGrown = true;
         }
     }
@@ -99,19 +84,12 @@ public class RootGrow : MonoBehaviour
     {
         mesh.transform.localScale = Vector3.Lerp(mesh.transform.localScale, rootGrowth * growthAmount, growSpeed);
         if (mesh.transform.localScale == rootGrowth * growthAmount) growing = false;
-
-      //  Debug.Log("bruhsdfjhsdfjh " + mesh.transform.localScale); 
     } 
 
     private void Deactivate()
     {
         ResetRoot();
         this.gameObject.SetActive(false);
-    }
-
-    private void DeactivateMovement()
-    {
-        movementScript.enabled = false;
     }
 
     private void GrowRoot()
@@ -131,14 +109,6 @@ public class RootGrow : MonoBehaviour
         colliderBox.size = Vector3.one;
         colliderBox.center = Vector3.zero;
         transform.localRotation = Quaternion.identity;
-
-
-/*        if (childBranch != null)
-        {
-            Debug.Log("Child is not null");
-            childBranch.transform.parent = null;
-            childBranch.gameObject.SetActive(false);
-        }*/
     }
 
     private void UpdateCenter(Vector3 newSize) => colliderBox.center = new Vector3(FormulaForCenter(newSize.x, true), FormulaForCenter(newSize.y), FormulaForCenter(newSize.z));
