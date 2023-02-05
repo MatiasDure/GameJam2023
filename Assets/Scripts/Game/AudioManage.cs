@@ -20,8 +20,6 @@ public class AudioManage : MonoBehaviour
     {
         Instance = this;
         audioSource = GetComponent<AudioSource>();
-
-
     }
 
 
@@ -31,6 +29,7 @@ public class AudioManage : MonoBehaviour
         {
             if(soundToPlay == s.sound)
             {
+                audioSource.pitch = soundToPlay == sound.sprouts ? 2f : 1f;
                 if (s.clip.Length < 2)
                 {
                     audioSource.PlayOneShot(s.clip[0]);
